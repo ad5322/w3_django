@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <style>
+        body {
+            background-color:rgb(29,29,29);
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <p>hi {{firstname}}</p>
+    <h1>List of fruits</h1>
+    {% for fruit in fruits  %}
+        <ul>
+
+            <li>{{fruit}}</li>
+        </ul>
+        
+    
+    {% endfor %}
+    {% for x in mymembers  %}
+        <p>{{x.firstname}}</p>
+    {% endfor %}
+
+    {% if greeting == 0 %}
+        <h1>Hello</h1>
+        {% else %}
+       
+        <h1>Welcome</h1>
+    {% endif %}
+    
+</body>
+</html>
