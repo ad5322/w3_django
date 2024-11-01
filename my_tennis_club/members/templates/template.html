@@ -1,38 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing</title>
-    <style>
-        body {
-            background-color:rgb(29,29,29);
-            color:white;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-    </style>
+   <link rel="stylesheet" href="{%static 'mystyle.css' %}">
 </head>
 <body>
-    <p>hi {{firstname}}</p>
-    <h1>List of fruits</h1>
-    {% for fruit in fruits  %}
-        <ul>
-
-            <li>{{fruit}}</li>
-        </ul>
-        
     
-    {% endfor %}
-    {% for x in mymembers  %}
-        <p>{{x.firstname}}</p>
-    {% endfor %}
+    <p>The queryset object:</p>
 
-    {% if greeting == 0 %}
-        <h1>Hello</h1>
-        {% else %}
-       
-        <h1>Welcome</h1>
-    {% endif %}
+{{ mymembers }}
+
+
+<p>Loop through the items:</p>
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Phone</th>
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+      <td>{{x.phone}}</td>
+    </tr>
+  {% endfor %}
+</table>
+   
     
 </body>
 </html>
